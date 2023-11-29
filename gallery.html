@@ -13,6 +13,25 @@
     <!-- linking bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./style.css">
+
+    <style>
+      /* Style the lightbox image */
+      #lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: none;
+          align-items: center;
+          justify-content: center;
+      }
+      #lightbox img {
+          max-width: 90%;
+          max-height: 90%;
+      }
+  </style>
 </head>
 
 <!-- title appearing in the browser tab -->
@@ -30,24 +49,47 @@
 
     <div class="row">
         <!-- nav bar and title -->
-        <div class="col-sm-1">
-            <h4>David Miron</h4>
-            <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li><a href="index.html">HOME</a></li>
-                <li class="active"><a href="gallery.html">GALLERY</a></li>
-                <li><a href="#">WRITING</a></li>
-                <li><a href="#">CONTACT</a></li>   
-                <li><a href="#">ABOUT</a></li>        
-            </ul>
-        </div>
+        <div id="navbar"></div>
         <!-- main content -->
         <div class="col-sm-10">
-            <h3>Column 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <h3>Contact for prints</h3>
+            <p>...</p>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+              <a>
+                <img class="img-responsive" src="./images/horseshoe.jpg" alt="horseshoe" onclick="openLightbox('./images/horseshoe.jpg')">
+                <div class="caption">
+                  <p>Colorado River south of Glen Canyon Dam</p>
+                </div>
+              </a>        
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a>
+              <img class="img-responsive" src="./images/guadalupe.jpg" alt="guadalupe" onclick="openLightbox('./images/guadalupe.jpg')">
+              <div class="caption">
+                <p>Guadalupe National Park</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a>
+              <img class="img-responsive" src="./images/joshua-tree.jpg" alt="joshua-tree" onclick="openLightbox('./images/joshua-tree.jpg')">
+              <div class="caption">
+                <p>Joshua Tree National Park</p>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+<!-- 
     <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
@@ -79,41 +121,28 @@
             </a>
           </div>
         </div>
+    </div> -->
+    
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="./images/horseshoe.jpg">
-              <img class="img-responsive" src="./images/horseshoe.jpg" alt="horseshoe">
-              <div class="caption">
-                <p>Lorem ipsum...</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="./images/guadalupe.jpg">
-              <img class="img-responsive" src="./images/guadalupe.jpg" alt="guadalupe">
-              <div class="caption">
-                <p>Lorem ipsum...</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="./images/joshua-tree.jpg">
-              <img class="img-responsive" src="./images/joshua-tree.jpg" alt="joshua-tree">
-              <div class="caption">
-                <p>Lorem ipsum...</p>
-              </div>
-            </a>
-          </div>
-        </div>
-    </div>
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 
 </html>
+
+<script>
+  $(function(){
+    $("#navbar").load("navbar.html"); 
+  });
+</script>

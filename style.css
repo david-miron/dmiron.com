@@ -1,5 +1,6 @@
 body {
-  background-color: powderblue;
+  font-family: 'Nunito', sans-serif;
+  background-color: rgb(229, 214, 214);
 }
 h1 {
   color: blue;
@@ -8,11 +9,12 @@ h4 {
   text-align: center;
 }
 p {
-  color: red;
+  font-family: 'Nunito', sans-serif;
+  color: rgb(0, 0, 0);
 } 
 
 /* thumbnails for gallery */
-.thumbnail-grid {
+.thumbnail {
   /* Override some default browser styles */
   margin: 1em 0;
   padding: 0;
@@ -24,17 +26,6 @@ p {
   /* Spacing */
   grid-gap: 10px;  /* old version of the property name */
   gap: 10px;
-}
-.thumbnail-grid li {
-  /* Some general stylistic stuff */
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #e8e8e8;
-  background: #f4f4f4;
-}
-.thumbnail-grid img {
-  /* Prevent a big thumbnail from spilling out */
-  max-width: 100%;
 }
 /* end of thumbnails for gallery */
 
